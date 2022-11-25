@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from './ui.module.css'
+import styles from './ui.module.css';
 
 type Props = {
     width?: number,
@@ -10,15 +10,16 @@ type Props = {
 
 export default function Logo({ width = 109, height = 40, onClick }: Props) {
     return (
-        <Link href="/" onClick={onClick} className={styles.logo}>
-                <Image 
-                    src="/kmn-logo.svg"
-                    alt="logo"
-                    width={width}
-                    height={height}
-                    style={{paddingTop: 10}}
-                    priority
-                />
-        </Link>
+        <div className={styles.logo} onClick={onClick} >
+            <Link href="/" >
+                    <Image 
+                        src="/kmn-logo.svg"
+                        alt="logo"
+                        width={width}
+                        height={height}
+                        priority
+                    />
+            </Link>
+        </div>
     )
 }
